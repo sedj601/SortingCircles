@@ -92,17 +92,13 @@ public class FXMLDocumentController implements Initializable {
             }      
             int smallerNumber = circleValues[index]; 
             Circle smallerCircle = circleContainer[index];
-            //Bounds smallerBounds = circleBounds[index];
             
             circleValues[index] = circleValues[i];
             circleContainer[index] = circleContainer[i];
-            //circleBounds[index] = circleBounds[i];
             
             circleValues[i] = smallerNumber;  
             circleContainer[i] = smallerCircle;
-            //circleBounds[i] = smallerBounds;
             
-            System.out.println(Arrays.toString(circleBounds));
             sequentialTransition.getChildren().addAll(swapBalls(i, index));
         }
         
@@ -181,9 +177,9 @@ public class FXMLDocumentController implements Initializable {
 
         CubicCurveTo cubicTo = new CubicCurveTo();
         cubicTo.setControlX1(c1CenterX);//initial x
-        cubicTo.setControlY1(c1CenterY - 35);//height - set this. I did initial y + 35
+        cubicTo.setControlY1(c1CenterY + 35);//height - set this. I did initial y + 35
         cubicTo.setControlX2(c2CenterX);//ending x
-        cubicTo.setControlY2(c1CenterY - 35);//height - set this. I did initial y + 35
+        cubicTo.setControlY2(c1CenterY + 35);//height - set this. I did initial y + 35
         cubicTo.setX(c1CenterX);//ending x
         cubicTo.setY(c1CenterY);//ending y
         
